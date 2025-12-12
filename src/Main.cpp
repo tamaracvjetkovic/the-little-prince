@@ -131,7 +131,7 @@ unsigned int studentInfoTexture;
 
 bool flipped = false;
 
-float foxPosX = 0.0f;              // NEW: fox center position in NDC
+float foxPosX = 0.0f;
 float foxPosY = 0.0f;
 bool showFoxQuote = false;
 
