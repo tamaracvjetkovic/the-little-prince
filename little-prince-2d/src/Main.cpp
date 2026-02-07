@@ -504,7 +504,6 @@ int main() {
 
     // -- vertices, shaders, textures --
 
-    // Potrebno naglasiti da program koristi alfa kanal za providnost
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
