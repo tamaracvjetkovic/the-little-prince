@@ -153,7 +153,7 @@ int STAR_COUNT = 1000;
 constexpr float QUOTE_SCALE_X[8] = { 1.1f, 1.1f, 1.17f, 1.25f, 1.08f, 0.72f, 1.1f, 1.0f };
 constexpr float QUOTE_SCALE_Y[8] = { 0.93f, 0.93f, 0.92f, 0.6f, 0.9f, 0.64f, 1.0f, 1.0f };
 constexpr float QUOTE_WIDTHS[8] = { 310.0f, 310.0f, 310.0f, 310.0f, 310.0f, 310.0f, 310.0f, 310.0f };
-constexpr float QUOTE_HEIGHTS[8] = { 130.0f, 130.0f, 130.0f, 130.0f, 130.0f, 130.0f, 130.0f, 130.0f };
+constexpr float QUOTE_HEIGHTS[8] = { 130.0f, 130.0f, 130.0f, 160.0f, 130.0f, 130.0f, 130.0f, 130.0f };
 
 // Decorations
 Model* baobabModel = nullptr;
