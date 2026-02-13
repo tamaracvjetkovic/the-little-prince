@@ -683,9 +683,16 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
     
     // toggle depth test (on Z)
     if (key == GLFW_KEY_Z && action == GLFW_PRESS) {
-        // DEPTH_TEST = !DEPTH_TEST;
-        // if (DEPTH_TEST) glEnable(GL_DEPTH_TEST); else glDisable(GL_DEPTH_TEST);
-        cout << "Depth test is ALWAYS ON for this project requirement." << endl;
+        DEPTH_TEST = !DEPTH_TEST;
+        if (DEPTH_TEST) {
+            glEnable(GL_DEPTH_TEST);
+            glDepthMask(GL_TRUE);
+            cout << "Depth test: ON" << endl;
+        } else {
+            glDisable(GL_DEPTH_TEST);
+            glDepthMask(GL_FALSE);
+            cout << "Depth test: OFF" << endl;
+        }
     }
 
     // toggle face culling (on C)
@@ -1483,6 +1490,7 @@ int main() {
         vec3 lightDirection = normalize(vec3(sin(lightAngle), -cos(lightAngle), -0.3f));
 
         litShader.use();
+        litShader.setFloat("globalAlpha", DEPTH_TEST ? 1.0f : 0.5f);
         litShader.setVec3("dirLight.direction", lightDirection);
         litShader.setVec3("dirLight.ambient", ambientColor); 
         litShader.setVec3("dirLight.diffuse", diffuseColor);

@@ -10,6 +10,7 @@ uniform sampler2D texture_diffuse1;
 uniform sampler2D texture_specular1; // metallic map
 uniform sampler2D texture_normal1;
 uniform sampler2D texture_roughness1;
+uniform float globalAlpha;
 
 struct DirLight {
     vec3 direction;
@@ -80,5 +81,5 @@ void main() {
         result += (pAmbient + pDiffuse + pSpecular) * attenuation;
     }
     
-    FragColor = vec4(result, texColor.a);
+    FragColor = vec4(result, texColor.a * globalAlpha);
 }
